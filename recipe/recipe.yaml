@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: nvidia-tao-pytorch
-  version: "7.1.0"
+  version: "7.2.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/NVIDIA-TAO/tao-pytorch/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 91b4245a7dbdeddecd824554e03bda76b7e3a46e7686f07bd1cb55d6cb04fcb2
+  sha256: 49094855daa44ba2ba4e8112d782c00d6838035a6c1ae2451158cb85e95f8755
 
 build:
   number: 0
