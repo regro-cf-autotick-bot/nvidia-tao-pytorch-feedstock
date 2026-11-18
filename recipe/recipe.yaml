@@ -39,6 +39,7 @@ requirements:
     - pytorch * cuda*
     - setuptools
   run:
+    - beartype
     - python
     - pytorch * cuda*
 
