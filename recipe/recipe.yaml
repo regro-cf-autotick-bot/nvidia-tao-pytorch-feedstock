@@ -18,6 +18,8 @@ build:
     env:
       TORCH_CUDA_ARCH_LIST: ${{ "7.5 8.0 8.6 8.9 9.0 10.0 12.0+PTX" if match(cuda_compiler_version, ">=13") else "7.0 7.5 8.0 8.6 8.9 9.0 10.0 12.0+PTX" }}
     content:
+      # PyTorch 2.14 requires C++20
+      - sed -i.bak 's@"-std=c++17"@"-std=c++20"@g' setup.py
       - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip:
     - cuda_compiler_version == "None" or not linux or match(python, "<3.12")
